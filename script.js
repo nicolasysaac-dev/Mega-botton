@@ -1,30 +1,20 @@
 let cliques = Number(localStorage.getItem("cliques")) || 0;
 
-document.addEventListener("DOMContentLoaded", function () {
+const contador = document.getElementById("contador");
+const botao = document.getElementById("botao");
 
-    const botao = document.getElementById("botao");
-    const contador = document.getElementById("contador");
+function atualizar() {
+    contador.textContent = "Cliques: " + cliques;
+}
 
-    function atualizarDisplay() {
-        contador.textContent = "Cliques: " + cliques;
-    }
+atualizar();
 
-    atualizarDisplay();
+botao.addEventListener("click", function () {
 
-    botao.addEventListener("click", function () {
+    cliques++;
 
-        cliques++;
+    atualizar();
 
-        atualizarDisplay();
-
-        localStorage.setItem("cliques", cliques);
-
-        botao.style.transform = "scale(0.9)";
-
-        setTimeout(function () {
-            botao.style.transform = "scale(1)";
-        }, 100);
-
-    });
+    localStorage.setItem("cliques", cliques);
 
 });
