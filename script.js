@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     cpsDisplay.textContent = "Cliques por segundo: " + cliquesPorSegundo;
     atualizarSkin();
     atualizarBotoesUpgrade();
+    atualizarSkinsBloqueadas();
   }
 
   // Função para mudar a skin do botão
@@ -36,6 +37,37 @@ document.addEventListener("DOMContentLoaded", function() {
       botao.classList.add("roxo");
     } else {
       botao.classList.add("vermelho");
+    }
+  }
+
+  // Função para atualizar skins bloqueadas/desbloqueadas
+  function atualizarSkinsBloqueadas() {
+    const skinRoxo = document.getElementById("skin-roxo");
+    const skinLaranja = document.getElementById("skin-laranja");
+    const skinAzul = document.getElementById("skin-azul");
+
+    if (cliques >= SKIN_THRESHOLDS.roxo) {
+      skinRoxo.classList.remove("bloqueado");
+      skinRoxo.classList.add("desbloqueado");
+    } else {
+      skinRoxo.classList.add("bloqueado");
+      skinRoxo.classList.remove("desbloqueado");
+    }
+
+    if (cliques >= SKIN_THRESHOLDS.laranja) {
+      skinLaranja.classList.remove("bloqueado");
+      skinLaranja.classList.add("desbloqueado");
+    } else {
+      skinLaranja.classList.add("bloqueado");
+      skinLaranja.classList.remove("desbloqueado");
+    }
+
+    if (cliques >= SKIN_THRESHOLDS.azul) {
+      skinAzul.classList.remove("bloqueado");
+      skinAzul.classList.add("desbloqueado");
+    } else {
+      skinAzul.classList.add("bloqueado");
+      skinAzul.classList.remove("desbloqueado");
     }
   }
 
