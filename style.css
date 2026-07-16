@@ -49,3 +49,40 @@ h1 {
     transform: scale(0.9);
 }
 
+
+
+#abrirLoja {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 20px;
+}
+
+#loja {
+    display: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: white;
+    border: 3px solid black;
+    border-radius: 15px;
+
+    padding: 20px;
+
+    width: 320px;
+
+    text-align: center;
+
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
+
+.upgrade {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0;
+}
+
