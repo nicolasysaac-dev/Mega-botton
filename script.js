@@ -60,7 +60,7 @@ comprarDedo.addEventListener("click", function () {
 
     } else {
 
-        alert("Você não tem cliques suficientes!");
+        alert("Você não tem cliques suficientes! ");
 
     }
 
